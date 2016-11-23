@@ -3,9 +3,7 @@
 namespace RoleUserBridge\Service;
 
 use RoleUserBridge\Mapper\RoleInterface;
-
 use RoleUserBridge\Mapper\RoleMapper;
-
 use ZfcUser\Service\User as ZfcUser;
 
 class User extends ZfcUser

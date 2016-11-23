@@ -1,15 +1,20 @@
 <?php 
 namespace RoleUserBridge\Factory;
 
-use Zend\ServiceManager\FactoryInterface;
-use Zend\ServiceManager\ServiceLocatorInterface;
+use Zend\ServiceManager\Factory\FactoryInterface;
 use RoleUserBridge\Service\User;
+use Interop\Container\ContainerInterface;
+
 
 class User implements FactoryInterface{ 
     
-    public function createService(ServiceLocatorInterface $serviceLocator){
+    public function __invoke(
+        ContainerInterface $container,
+        $requestedName,
+        array $options = null
+    ){
         $service = new User();
-        $service->setServiceManager($serviceLocator);
+        $service->setServiceManager($container);
         return $service;
     }
 }
