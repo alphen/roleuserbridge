@@ -2,7 +2,7 @@
 namespace RoleUserBridge\Factory;
 
 use Zend\ServiceManager\Factory\FactoryInterface;
-use RoleUserBridge\Service\User;
+use RoleUserBridge\Service\User as UserService;
 use Interop\Container\ContainerInterface;
 
 
@@ -13,7 +13,7 @@ class User implements FactoryInterface{
         $requestedName,
         array $options = null
     ){
-        $service = new User();
+        $service = new UserService();
         $service->setServiceManager($container);
         return $service;
     }
